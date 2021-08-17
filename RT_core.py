@@ -8,8 +8,6 @@ from numpy import sqrt, arctan2, arccos, sin, tan
 from math import radians, degrees, inf
 from random import uniform
 import ray
-import numba
-from numba import jit
 
 
 FLOAT = 'float32'
