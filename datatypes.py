@@ -3,7 +3,6 @@ from numpy import dot, array, asarray, sqrt
 from math import sqrt, pi, sin, cos, radians
 from random import uniform
 from numpy.linalg import norm
-#from numba import njit
 
 #OPERATIONS
 
