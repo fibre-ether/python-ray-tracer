@@ -8,4 +8,4 @@ Inspired by Peter Shirley's book over at https://raytracing.github.io/books/RayT
 Only diffuse, metal and light materials implemented. Multi-core processing used to speed up rendering.
 Works slightly faster in linux or WSL as Ray starts up faster in linux.
 
-![Images](/images/rt_img1.jpg?raw=true "Some ray traced balls")
+![Images](/images/rt_img1.png?raw=true "Some ray traced balls")
