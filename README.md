@@ -1,5 +1,5 @@
 # Python ray tracer
-A simple ray tracer made in python (WIP)
+A simple ray tracer made in python 
 
 This is just a basic implementation of a ray tracer I made as a project.
 
