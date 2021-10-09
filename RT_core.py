@@ -38,9 +38,9 @@ BLACK = Color(array((0, 0, 0)))
 MSAA = True
 number_of_samples = 2
 DOWN = 2
-depth = 2
+depth = 50
 lens_rad = 0
-DARKNESS=25#max is 255 Dont set 0
+DARKNESS=5#max is 255 Dont set 0
 CORES = 8 #Set to your max core count
 
 #constants
@@ -53,17 +53,17 @@ IMAGE_HEIGHT = int(IMAGE_WIDTH/ASPECT_RATIO)
 MAP = np.zeros((IMAGE_HEIGHT, IMAGE_WIDTH, 3), dtype='uint8')
 
 #Materials
-groundmt = Material('Diffuse', Color(array((1  ,1   ,1   ))),0.25,10)
+groundmt = Material('Metal', Color(array((1  ,1   ,1   ))),0.25,10)
 leftmt =   Material('Diffuse', Color(array((0.8  , 0.9, 0))))
 rightmt =  Material('Diffuse', Color(array((0  , 0.4, 0.4))),10)
 centremt = Material('Diffuse', Color(array((0, 0.2, 0.1))),1)
 smallmt =  Material('Diffuse', Color(array((0.2, 0.7, 0.9))))
 backmt =   Material('Diffuse', Color(array((0.1, 0.9, 0.2))))
 lsmallmt = Material('Diffuse',Color(array((0  , 0.3  ,0.2 ))),0.5)
-lightmt1 = Material('Light', Color(array((1, 1, 0))), 1)
+lightmt1 = Material('Light', Color(array((0.2, 1, 0))), 1)
 lightmt2 = Material('Light', Color(array((0.5, 0  ,0.5 ))), 1)
 #Objects(Circles as of now, ie:ver3.2)
-centre = Circle(Point(array((0    , 0.25  , 0    ))), 0.75,centremt)
+centre = Circle(Point(array((0    , 0.25  , 0    ))), 0.75,lightmt1)
 right =   Circle(Point(array((1   , 2     , -3   ))), 2.5, rightmt)
 left =    Circle(Point(array((-5  , 0.325   , -10))), 1.2, leftmt)
 back =    Circle(Point(array((3.5 , -0.1  , -3.25))), 0.5, backmt)
@@ -72,7 +72,7 @@ leftsmall=Circle(Point(array((-2  , 0     , 0    ))), 0.5, lsmallmt)
 light=    Circle(Point(array((0   , 2.75  , -4      ))),1,  lightmt1)
 smlight2= Circle(Point(array((0   , -0.5  , 1.5  ))),0.25,lightmt1)
 smlight3= Circle(Point(array((-2  , -0.5  , 1    ))),      0.25,  lightmt1)
-hittable = [ground, right, light, centre, leftsmall, back] #[centre,ground]
+hittable = [ground, right, centre, leftsmall, back] #[centre,ground]
 
 def Camera(VFOV, lookfrom, lookat, vup):
 	f = lookfrom - lookat
